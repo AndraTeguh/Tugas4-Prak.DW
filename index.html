@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List App</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0 auto;
+            padding: 20px;
+            max-width: 600px;
+            background-color: hsl(220, 30%, 20%);
+            color: #fff;
+            border-radius: 10px;
+        }
+        h1 {
+            text-align: center;
+            color: #3a86ff;
+            border-bottom: 2px solid #ffffff;
+            padding-bottom: 10px;
+            font-size: 2.5em;
+        }
+        #task-input {
+            width: 100%;
+            max-width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #3a86ff;
+            border-radius: 5px;
+            box-sizing: border-box;
+            margin: 10px 0;
+            transition: border 0.3s;
+        }
+        #task-input:focus {
+            border-color: #00b4d8;
+            outline: none;
+        }
+        #add-task-btn {
+            display: block;
+            padding: 10px;
+            font-size: 16px;
+            background: linear-gradient(to right, #3a86ff, #00b4d8);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        #add-task-btn:hover {
+            background: linear-gradient(to right, #00b4d8, #3a86ff);
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+        li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #2b2d42;
+            margin-bottom: 10px;
+            transition: background 0.3s;
+        }
+        li.completed {
+            text-decoration: line-through;
+            background-color: #414e69;
+        }
+        li:hover {
+            background-color: #3c3f58;
+        }
+        button {
+            margin-left: 10px;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            background-color: #e63946;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #d62828;
+        }
+        h3 {
+            text-align: center;
+            margin-top: 30px;
+            color: #3a86ff;
+            font-size: 1.5em;
+        }
+        .filter-btn {
+            padding: 10px;
+            margin: 5px;
+            border: none;
+            background-color: #00b4d8;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .filter-btn:hover {
+            background-color: #0288d1;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>To-Do List</h1>
+    <input type="text" id="task-input" placeholder="Enter a new task">
+    <button id="add-task-btn">Add Task</button>
+
+    <h3>Filter Tasks</h3>
+    <div style="text-align: center;">
+        <button class="filter-btn" onclick="filterTasks('all')">All</button>
+        <button class="filter-btn" onclick="filterTasks('active')">Active</button>
+        <button class="filter-btn" onclick="filterTasks('completed')">Completed</button>
+    </div>
+
+    <ul id="task-list"></ul>
+
+    <script src="App.js"></script>
+</body>
+</html>
